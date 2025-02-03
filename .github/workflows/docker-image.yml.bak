@@ -33,4 +33,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . -t ghcr.io/${{env.OWNER_LC }}/cubix/cloudnative6/api:latest
     - name: Push the Docker image
-      run: docker push ghcr.io/${{ env.OWNER_LC }}/cubix/cloudnative6/api:latest
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker push ghcr.io/${{ env.OWNER_LC }}/cubix/cloudnative6/api:latest
